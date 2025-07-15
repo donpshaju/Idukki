@@ -762,6 +762,29 @@
             color: var(--dark);
         }
 
+        .helpline-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .helpline-section h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .helpline-section p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -903,12 +926,6 @@
             .testimonial-text {
                 font-size: 1.1rem;
             }
-            /* Sticky image in destination modal */
-.destination-modal-image {
-    position: sticky;
-    top: 20px;
-    align-self: flex-start;
-}
         }
     </style>
 </head>
@@ -1092,7 +1109,15 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-pinterest"></i></a>
                     </div>
+                    
+                    <div class="helpline-section">
+                        <h4><i class="fas fa-phone-volume"></i> Tourism Helpline</h4>
+                        <p><i class="fas fa-phone"></i> +91 471 2321132</p>
+                        <p><i class="fas fa-mobile-alt"></i> +91 949 666 7777</p>
+                        <p><i class="fas fa-envelope"></i> help@keralatourism.org</p>
+                    </div>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -1103,25 +1128,28 @@
                         <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Popular Destinations</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Idukki Arch Dam</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Munnar</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Eravikulam National Park</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Anamudi Peak</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Thekkady</a></li>
+                        <li><a href="#" class="destination-link" data-id="0"><i class="fas fa-map-marker-alt"></i> Idukki Arch Dam</a></li>
+                        <li><a href="#" class="destination-link" data-id="1"><i class="fas fa-map-marker-alt"></i> Munnar</a></li>
+                        <li><a href="#" class="destination-link" data-id="2"><i class="fas fa-map-marker-alt"></i> Eravikulam National Park</a></li>
+                        <li><a href="#" class="destination-link" data-id="3"><i class="fas fa-map-marker-alt"></i> Anamudi Peak</a></li>
+                        <li><a href="#" class="destination-link" data-id="12"><i class="fas fa-map-marker-alt"></i> Thekkady</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> District Tourism Office, Idukki, Kerala 685603</p>
-                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-phone"></i> +91 486 223 2277</p>
                     <p><i class="fas fa-envelope"></i> info@idukkexplorer.com</p>
                     <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
                     <a href="#" class="btn" style="margin-top: 15px;">Get Travel Guide</a>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2023 IdukkiExplorer. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Kerala Tourism</p>
             </div>
@@ -1130,7 +1158,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Destination Data with Google Maps links
+        // Destination Data with Google Maps links, restaurants and stays
         const destinations = [
             {
                 id: 0,
@@ -1143,7 +1171,15 @@
                 climate: "Cool and Pleasant",
                 activities: "Sightseeing, Boating, Photography",
                 bestTime: "September to May",
-                mapLink: "https://www.google.com/maps?q=Idukki+Arch+Dam"
+                mapLink: "https://www.google.com/maps?q=Idukki+Arch+Dam",
+                restaurants: [
+                    { name: "Dam View Restaurant", cuisine: "Kerala Cuisine" },
+                    { name: "Lake Side Cafe", cuisine: "Multi-cuisine" }
+                ],
+                stays: [
+                    { name: "Green Valley Resort", type: "3-Star Resort" },
+                    { name: "Hill View Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 1,
@@ -1156,7 +1192,15 @@
                 climate: "Cool and Misty",
                 activities: "Tea Estate Tours, Trekking, Wildlife Spotting",
                 bestTime: "September to May",
-                mapLink: "https://www.google.com/maps?q=Munnar"
+                mapLink: "https://www.google.com/maps?q=Munnar",
+                restaurants: [
+                    { name: "Rapsy Restaurant", cuisine: "Indian & Chinese" },
+                    { name: "Saravana Bhavan", cuisine: "South Indian" }
+                ],
+                stays: [
+                    { name: "Tea County Resort", type: "4-Star Resort" },
+                    { name: "Fragrant Nature Munnar", type: "Boutique Hotel" }
+                ]
             },
             {
                 id: 2,
@@ -1169,12 +1213,20 @@
                 climate: "Cool and Windy",
                 activities: "Wildlife Safari, Trekking, Photography",
                 bestTime: "September to November & April to June",
-                mapLink: "https://www.google.com/maps?q=Eravikulam+National+Park"
+                mapLink: "https://www.google.com/maps?q=Eravikulam+National+Park",
+                restaurants: [
+                    { name: "Park View Restaurant", cuisine: "Kerala Cuisine" },
+                    { name: "Mist Mountain Cafe", cuisine: "Snacks & Beverages" }
+                ],
+                stays: [
+                    { name: "Windy Woods Resort", type: "Nature Resort" },
+                    { name: "Tahr Valley Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 3,
                 name: "Anamudi Peak",
-                image: "https://images.unsplash.com/photo-1602006018380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/736x/02/67/da/0267da42207a27965f0ced62be95aa26.jpg",
                 shortDesc: "South India's highest peak at 2,695 meters.",
                 longDesc: "Anamudi Peak, standing tall at 2,695 meters, is the highest peak in South India. Located within the Eravikulam National Park, the name 'Anamudi' translates to 'Elephant's Forehead' in Malayalam. The peak offers challenging trekking opportunities for adventure enthusiasts and rewards them with panoramic views of the Western Ghats. The region around Anamudi is rich in biodiversity with several endemic species of flora and fauna. Trekkers need special permission from forest authorities to climb this peak.",
                 category: "adventure",
@@ -1182,7 +1234,14 @@
                 climate: "Cold at summit",
                 activities: "Trekking, Nature Walks, Photography",
                 bestTime: "December to April",
-                mapLink: "https://www.google.com/maps?q=Anamudi+Peak"
+                mapLink: "https://www.google.com/maps?q=Anamudi+Peak",
+                restaurants: [
+                    { name: "Peak View Cafe", cuisine: "Indian & Continental" }
+                ],
+                stays: [
+                    { name: "High Range Camping", type: "Adventure Camp" },
+                    { name: "Eco Mountain Lodge", type: "Eco Lodge" }
+                ]
             },
             {
                 id: 4,
@@ -1195,7 +1254,15 @@
                 climate: "Tropical",
                 activities: "Boat Safari, Bamboo Rafting, Jungle Trekking",
                 bestTime: "October to June",
-                mapLink: "https://www.google.com/maps?q=Periyar+National+Park"
+                mapLink: "https://www.google.com/maps?q=Periyar+National+Park",
+                restaurants: [
+                    { name: "Bamboo Grove Restaurant", cuisine: "Indian & Chinese" },
+                    { name: "Lake View Restaurant", cuisine: "Multi-cuisine" }
+                ],
+                stays: [
+                    { name: "Periyar House", type: "Forest Lodge" },
+                    { name: "Greenwoods Resort", type: "3-Star Resort" }
+                ]
             },
             {
                 id: 5,
@@ -1208,12 +1275,19 @@
                 climate: "Cool and Pleasant",
                 activities: "Boating, Picnicking, Photography",
                 bestTime: "November to May",
-                mapLink: "https://www.google.com/maps?q=Mattupetty+Dam"
+                mapLink: "https://www.google.com/maps?q=Mattupetty+Dam",
+                restaurants: [
+                    { name: "Lake Side Restaurant", cuisine: "Indian & Chinese" }
+                ],
+                stays: [
+                    { name: "Mattupetty Farm Stay", type: "Farm Stay" },
+                    { name: "Misty Meadows Resort", type: "3-Star Resort" }
+                ]
             },
             {
                 id: 6,
                 name: "Thommankuthu Waterfalls",
-                image: "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/1200x/f4/07/b3/f407b3d80648f827cf05a5b5c11a1c65.jpg",
                 shortDesc: "Seven-step waterfall with natural pools.",
                 longDesc: "Thommankuthu Waterfalls is a spectacular seven-step waterfall located about 17km from Thodupuzha. The waterfall cascades down from a height of about 1500 meters through seven different stages, creating natural pools at each level. Surrounded by dense forests, the area offers excellent trekking opportunities. The waterfall is named after a tribal leader, Thomman, who is believed to have sacrificed his life here. The pools at different levels are safe for swimming and provide a refreshing experience.",
                 category: "nature",
@@ -1221,12 +1295,18 @@
                 climate: "Tropical",
                 activities: "Trekking, Swimming, Nature Walks",
                 bestTime: "June to September",
-                mapLink: "https://www.google.com/maps?q=Thommankuthu+Waterfalls"
+                mapLink: "https://www.google.com/maps?q=Thommankuthu+Waterfalls",
+                restaurants: [
+                    { name: "Waterfall View Cafe", cuisine: "Snacks & Beverages" }
+                ],
+                stays: [
+                    { name: "Forest Edge Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 7,
                 name: "Ramakkalmedu",
-                image: "https://images.unsplash.com/photo-1602005929697-6a2b6a5c5b33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/736x/38/0b/91/380b91d1b1a9e691f69a67b7f46d0613.jpg",
                 shortDesc: "Windy hilltop with panoramic views of Tamil Nadu.",
                 longDesc: "Ramakkalmedu, meaning 'Land of Rama's Stone', is a hill station and hamlet located in Idukki district. Situated about 16km from Nedumkandam, it offers panoramic views of the Tamil Nadu plains on one side and the Western Ghats on the other. The area is famous for its constant breeze and the huge statue of Kuravan and Kurathi that stands as a symbol of cross-border friendship between Kerala and Tamil Nadu. The rolling hills covered in green grass offer spectacular views, especially at sunset.",
                 category: "nature",
@@ -1234,12 +1314,18 @@
                 climate: "Windy and Pleasant",
                 activities: "Sightseeing, Photography, Nature Walks",
                 bestTime: "October to March",
-                mapLink: "https://www.google.com/maps?q=Ramakkalmedu"
+                mapLink: "https://www.google.com/maps?q=Ramakkalmedu",
+                restaurants: [
+                    { name: "Windy Cafe", cuisine: "Indian & Continental" }
+                ],
+                stays: [
+                    { name: "Hill Top Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 8,
                 name: "Kalvari Mount",
-                image: "https://images.unsplash.com/photo-1602006008380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/1200x/13/d1/e5/13d1e5e742c59f83fcf9f28b9f47ac4a.jpg",
                 shortDesc: "Christian pilgrimage site with panoramic views.",
                 longDesc: "Kalvari Mount, also known as Kalliyanathandu, is a Christian pilgrimage center located near Idukki town. The site features a church at the summit and 14 stations of the cross depicting the passion of Christ. The climb to the top offers breathtaking views of the Idukki reservoir and the surrounding hills. The annual festival during Lent attracts thousands of devotees. Even for non-religious visitors, the viewpoint at the top offers one of the best panoramic views of the Idukki region.",
                 category: "cultural",
@@ -1247,12 +1333,19 @@
                 climate: "Cool and Pleasant",
                 activities: "Pilgrimage, Trekking, Sightseeing",
                 bestTime: "October to May",
-                mapLink: "https://www.google.com/maps?q=Kalvari+Mount"
+                mapLink: "https://www.google.com/maps?q=Kalvari+Mount",
+                restaurants: [
+                    { name: "Mount View Restaurant", cuisine: "Kerala Cuisine" }
+                ],
+                stays: [
+                    { name: "Kalvari Heights Resort", type: "3-Star Resort" },
+                    { name: "Pilgrim's Rest Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 9,
                 name: "Chinnar Wildlife Sanctuary",
-                image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/1200x/b6/04/e8/b604e8e316383d6d44b95e3489a3e8a3.jpg",
                 shortDesc: "Diverse ecosystem with unique dry thorny forests.",
                 longDesc: "Chinnar Wildlife Sanctuary is located in the rain shadow region of the Western Ghats, making it unique with its dry thorny forests. Spread over 90 sq km, the sanctuary is home to several endangered species including the grizzled giant squirrel, star tortoise, and the tufted grey langur. The sanctuary is also rich in reptilian fauna and is an important center for eco-tourism. Visitors can enjoy guided treks, wildlife spotting, and visits to the Thoovanam waterfalls inside the sanctuary.",
                 category: "wildlife",
@@ -1260,12 +1353,18 @@
                 climate: "Dry and Hot",
                 activities: "Wildlife Safari, Trekking, Waterfall Visit",
                 bestTime: "December to April",
-                mapLink: "https://www.google.com/maps?q=Chinnar+Wildlife+Sanctuary"
+                mapLink: "https://www.google.com/maps?q=Chinnar+Wildlife+Sanctuary",
+                restaurants: [
+                    { name: "Chinnar Safari Restaurant", cuisine: "Indian" }
+                ],
+                stays: [
+                    { name: "Wilderness Camp", type: "Adventure Camp" }
+                ]
             },
             {
                 id: 10,
                 name: "Marayoor",
-                image: "https://images.unsplash.com/photo-1602006008380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/1200x/3d/01/85/3d01856f51eb0a6237a80448a1789e76.jpg",
                 shortDesc: "Famous for natural sandalwood forests and dolmens.",
                 longDesc: "Marayoor is the only place in Kerala with natural sandalwood forests. Located about 42km from Munnar, the region is also famous for its prehistoric dolmens (muniyaras) and cave paintings that date back to the Stone Age. The area has a unique microclimate suitable for growing sugarcane, and visitors can see traditional jaggery production. The sandalwood factories and the protected forests make Marayoor an interesting destination for nature and history enthusiasts.",
                 category: "cultural",
@@ -1273,25 +1372,39 @@
                 climate: "Tropical",
                 activities: "Sandalwood Forest Tour, Dolmen Exploration, Jaggery Making",
                 bestTime: "September to May",
-                mapLink: "https://www.google.com/maps?q=Marayoor"
+                mapLink: "https://www.google.com/maps?q=Marayoor",
+                restaurants: [
+                    { name: "Sandalwood Restaurant", cuisine: "Traditional Kerala" }
+                ],
+                stays: [
+                    { name: "Marayoor Heritage Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 11,
-                name: "Painavu",
-                image: "https://images.unsplash.com/photo-1593692909680-1f0ea0c6b0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-                shortDesc: "Headquarters of Idukki district surrounded by forests.",
-                longDesc: "Painavu is the administrative headquarters of Idukki district, nestled in the hills and surrounded by dense forests. The town offers panoramic views of the surrounding hills and valleys. Key attractions include the Idukki Wildlife Sanctuary, the district administrative complex, and the nearby viewpoints that offer spectacular sunrise and sunset views. Painavu serves as a base for exploring nearby attractions like the Idukki Arch Dam and Cheruthoni Dam.",
+                name: "Hill View Park",
+                image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/5f/f8/77/hill-view-park.jpg?w=900&h=500&s=1",
+                shortDesc: "Scenic park with panoramic views of Idukki reservoir.",
+                longDesc: "Hill View Park is a beautifully landscaped park located near Idukki town, offering breathtaking panoramic views of the Idukki reservoir and surrounding hills. Spread over 8 acres, the park features well-maintained gardens, walking paths, and an observation tower that provides a 360-degree view of the picturesque landscape. The park is an ideal spot for picnics, leisurely walks, and photography, especially during sunrise and sunset when the reservoir and hills are bathed in golden light.",
                 category: "nature",
                 altitude: "1,200m above sea level",
                 climate: "Cool and Pleasant",
-                activities: "Sightseeing, Nature Walks, Photography",
+                activities: "Sightseeing, Photography, Nature Walks",
                 bestTime: "Year-round",
-                mapLink: "https://www.google.com/maps?q=Painavu"
+                mapLink: "https://www.google.com/maps?q=Hill+View+Park+Idukki",
+                restaurants: [
+                    { name: "Park View Restaurant", cuisine: "Multi-cuisine" },
+                    { name: "Green Cafe", cuisine: "Cafe" }
+                ],
+                stays: [
+                    { name: "Hill View Resort", type: "3-Star Resort" },
+                    { name: "Valley Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 12,
                 name: "Thekkady",
-                image: "https://images.unsplash.com/photo-1593692909680-1f0ea0c6b0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/1200x/e4/4d/55/e44d5509e1dc97bae40feb81b80d4663.jpg",
                 shortDesc: "Gateway to Periyar National Park and wildlife adventures.",
                 longDesc: "Thekkady is a picturesque town located near the Periyar National Park, known for its rich biodiversity and spice plantations. It serves as the gateway to the Periyar Wildlife Sanctuary, where visitors can enjoy boat rides on the Periyar Lake to spot elephants, tigers, and various bird species. The town is surrounded by hills and spice gardens, offering opportunities for spice tours, trekking, and cultural performances.",
                 category: "wildlife",
@@ -1299,12 +1412,20 @@
                 climate: "Tropical",
                 activities: "Boat Safari, Spice Tours, Cultural Shows",
                 bestTime: "October to June",
-                mapLink: "https://www.google.com/maps?q=Thekkady"
+                mapLink: "https://www.google.com/maps?q=Thekkady",
+                restaurants: [
+                    { name: "Spice Garden Restaurant", cuisine: "Kerala Cuisine" },
+                    { name: "Periyar Lake View Restaurant", cuisine: "Indian & Continental" }
+                ],
+                stays: [
+                    { name: "Cardamom County Resort", type: "4-Star Resort" },
+                    { name: "Greenwoods Resort Thekkady", type: "3-Star Resort" }
+                ]
             },
             {
                 id: 13,
                 name: "Vagamon",
-                image: "https://images.unsplash.com/photo-1602006008380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.pinimg.com/1200x/74/42/59/74425997f5c58b5f26860ba55d9a4cff.jpg",
                 shortDesc: "Picturesque hill station with meadows and pine forests.",
                 longDesc: "Vagamon is a beautiful hill station situated at the border of Idukki and Kottayam districts. Known for its cool climate, green meadows, pine forests, and tea plantations, Vagamon offers a peaceful retreat away from city life. The area features several viewpoints including Suicide Point, Thangal Para (a Muslim pilgrimage center), and Kurisumala (a Christian pilgrimage center). Adventure activities like paragliding, trekking, and rock climbing are popular here.",
                 category: "adventure",
@@ -1312,20 +1433,34 @@
                 climate: "Cool and Misty",
                 activities: "Paragliding, Trekking, Rock Climbing",
                 bestTime: "Year-round",
-                mapLink: "https://www.google.com/maps?q=Vagamon"
+                mapLink: "https://www.google.com/maps?q=Vagamon",
+                restaurants: [
+                    { name: "Pine Valley Restaurant", cuisine: "Indian & Chinese" },
+                    { name: "Meadow View Cafe", cuisine: "Cafe" }
+                ],
+                stays: [
+                    { name: "Vagamon Heights Resort", type: "4-Star Resort" },
+                    { name: "Green Meadows Homestay", type: "Homestay" }
+                ]
             },
             {
                 id: 14,
-                name: "Mangala Devi Temple",
-                image: "https://images.unsplash.com/photo-1593692909680-1f0ea0c6b0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-                shortDesc: "Ancient temple on the Kerala-Tamil Nadu border.",
-                longDesc: "Mangala Devi Temple is an ancient stone temple located at the border of Kerala and Tamil Nadu, deep inside the Periyar Tiger Reserve. Dedicated to Goddess Kannaki (Mangala Devi), the temple is believed to be over 2000 years old. The temple is open to the public only during the Chitra Pournami festival in April/May. The journey to the temple through dense forests is an adventure in itself, offering opportunities to spot wildlife.",
-                category: "cultural",
-                altitude: "1,300m above sea level",
+                name: "Achuruli Tunnel",
+                image: "https://i.pinimg.com/1200x/2b/a2/e5/2ba2e566a15b141fc8e1db8bb033b470.jpg",
+                shortDesc: "Anchuruli Tunnel is a 5.5 km scenic water tunnel.",
+                longDesc: "Anchuruli Tunnel is a 5.5 km long water tunnel in Idukki, Kerala, part of the Idukki hydroelectric project, diverting water from the Erattayar dam to the Idukki reservoir. It's a popular tourist spot known for its unique engineering and scenic beauty, with a waterfall formed during the monsoon season when the water flow is high. Visitors are advised to exercise caution due to the potential for accidents during the monsoon season when the water flow is strong",
+                category: "nature",
+                altitude: "900m above sea level",
                 climate: "Tropical",
-                activities: "Pilgrimage, Trekking, Wildlife Spotting",
-                bestTime: "April-May during festival",
-                mapLink: "https://www.google.com/maps?q=Mangala+Devi+Temple"
+                activities: "Trekking, Swimming, Photography",
+                bestTime: "June to September",
+                mapLink: "https://www.google.com/maps?q=Achuruli+Waterfalls",
+                restaurants: [
+                    { name: "Waterfall View Cafe", cuisine: "Snacks & Beverages" }
+                ],
+                stays: [
+                    { name: "Forest Retreat", type: "Eco Lodge" }
+                ]
             }
         ];
 
@@ -1335,6 +1470,7 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         const header = document.getElementById('header');
+        const destinationLinks = document.querySelectorAll('.destination-link');
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
@@ -1410,15 +1546,39 @@
                 modalContent.style.overflow = 'hidden';
                 modalContent.style.position = 'relative';
                 modalContent.style.animation = 'modalOpen 0.5s ease';
+                modalContent.style.maxHeight = '90vh';
+                modalContent.style.overflowY = 'auto';
+                
+                // Generate restaurants HTML
+                let restaurantsHTML = '';
+                destination.restaurants.forEach(restaurant => {
+                    restaurantsHTML += `
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600;">${restaurant.name}</div>
+                            <div style="font-size: 0.9rem; color: #666;">${restaurant.cuisine}</div>
+                        </div>
+                    `;
+                });
+                
+                // Generate stays HTML
+                let staysHTML = '';
+                destination.stays.forEach(stay => {
+                    staysHTML += `
+                        <div style="margin-bottom: 10px;">
+                            <div style="font-weight: 600;">${stay.name}</div>
+                            <div style="font-size: 0.9rem; color: #666;">${stay.type}</div>
+                        </div>
+                    `;
+                });
                 
                 modalContent.innerHTML = `
-                    <div style="background: var(--primary); padding: 25px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="background: var(--primary); padding: 25px; color: white; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10;">
                         <h3 style="font-size: 1.8rem; font-family: 'Playfair Display', serif;">${destination.name}</h3>
                         <button class="close-modal" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer; transition: all 0.3s ease;">&times;</button>
                     </div>
                     <div style="padding: 30px; display: flex; gap: 30px; flex-wrap: wrap;">
-                    <div class="destination-modal-image" style="flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-                          <img src="${destination.image}" alt="${destination.name}" style="width: 100%; height: auto; display: block;">
+                        <div style="flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                            <img src="${destination.image}" alt="${destination.name}" style="width: 100%; height: auto; display: block;">
                         </div>
                         <div style="flex: 1; min-width: 300px;">
                             <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">${destination.longDesc}</p>
@@ -1440,9 +1600,30 @@
                                     <span>Best Time: ${destination.bestTime}</span>
                                 </div>
                             </div>
-                            <a href="${destination.mapLink}" target="_blank" class="btn" style="margin-top: 10px;">
-                                <i class="fas fa-map-marker-alt"></i> Open in Google Maps
-                            </a>
+                            
+                            <div style="margin-top: 30px; display: flex; gap: 30px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h4 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-utensils"></i> Nearby Restaurants
+                                    </h4>
+                                    ${restaurantsHTML}
+                                </div>
+                                <div style="flex: 1; min-width: 250px;">
+                                    <h4 style="color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-hotel"></i> Stay Facilities
+                                    </h4>
+                                    ${staysHTML}
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 20px; display: flex; gap: 15px;">
+                                <a href="${destination.mapLink}" target="_blank" class="btn" style="margin-top: 10px;">
+                                    <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+                                </a>
+                                <a href="#contact" class="btn" style="margin-top: 10px; background: var(--secondary);">
+                                    <i class="fas fa-phone"></i> Contact for Booking
+                                </a>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1483,6 +1664,21 @@
                         const filtered = destinations.filter(dest => dest.category === filter);
                         generateDestinationCards(filtered);
                     }
+                });
+            });
+            
+            // Footer destination links
+            destinationLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const id = this.getAttribute('data-id');
+                    showDestinationDetails(id);
+                    
+                    // Scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
             });
             
