@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idukki Tourism | Gateway to Kerala's High Ranges</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c5f2d;
+            --secondary: #97bc62;
+            --accent: #f3c623;
+            --dark: #1a2c1b;
+            --light: #f8f9fa;
+            --text: #333;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7f6;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(151, 188, 98, 0.1) 0%, rgba(245, 247, 246, 0) 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(44, 95, 45, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(44, 95, 45, 0.4);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(26, 44, 27, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(26, 44, 27, 0.98);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://keralatourism.travel/images/destinations/places-to-visit/idukki/munnar-idukki-kerala-tourism-entry-fee-timings-holidays-reviews-small.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            animation: fadeInDown 1s ease;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1s ease;
+            font-weight: 300;
+        }
+
+        .hero .btn {
+            animation: fadeIn 1.5s ease;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%232c5f2d" fill-opacity="0.05" d="M20,20 Q40,5 50,30 T90,20"/></svg>') no-repeat;
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transform: rotate(2deg);
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: rotate(0) scale(1.02);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Destinations Section */
+        .destinations {
+            background: linear-gradient(to bottom, #f5f7f6, #e6f0e1);
+            position: relative;
+        }
+
+        .destinations::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%232c5f2d" fill-opacity="0.05" d="M20,20 Q40,5 50,30 T90,20"/></svg>') no-repeat;
+            background-size: contain;
+            z-index: 0;
+            transform: rotate(180deg);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .destination-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .map-link:hover {
+            color: var(--secondary);
+            gap: 12px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: white;
+            position: relative;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px 15px 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(to bottom, #e6f0e1, #d5e6d1);
+            position: relative;
+        }
+
+        .testimonial-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            font-family: serif;
+        }
+
+        .testimonial-text::before {
+            top: -30px;
+            left: -20px;
+        }
+
+        .testimonial-text::after {
+            bottom: -60px;
+            right: -20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .testimonial-nav button {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: none;
+            background: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-nav button.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            color: var(--secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-25px) translateX(-50%); }
+            60% { transform: translateY(-15px) translateX(-50%); }
+        }
+
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 60px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-slide {
+                padding: 25px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            /* Sticky image in destination modal */
+.destination-modal-image {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Idukki<span>Explorer</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Idukki</h1>
+            <p>Kerala's Majestic High Range Paradise</p>
+            <a href="#destinations" class="btn">Explore Destinations</a>
+        </div>
+        <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Idukki</h2>
+                <p>Discover the crown jewel of Kerala's high ranges</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Land of Misty Mountains</h3>
+                    <p>Nestled in the Western Ghats of Kerala, Idukki is a breathtaking hill station known for its rugged mountains, dense forests, and sprawling spice plantations. The name Idukki is derived from the Malayalam word 'Idukku' meaning a narrow gorge, perfectly describing its topography.</p>
+                    <p>Home to South India's highest peak - Anamudi, and Asia's largest arch dam - Idukki Arch Dam, this district offers a unique blend of natural beauty and engineering marvels. With altitudes ranging from 2,500 to 5,000 feet above sea level, Idukki enjoys a pleasant climate throughout the year.</p>
+                    <p>Idukki is a biodiversity hotspot with numerous wildlife sanctuaries and national parks, making it a paradise for nature lovers and adventure seekers. From trekking through misty mountains to wildlife safaris and spice plantation tours, Idukki promises unforgettable experiences.</p>
+                    <a href="#destinations" class="btn">Explore Destinations</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://www.keralatourism.org/images/enchanting_kerala/large/romancing_with_the_mist_clad_hills20131221064055_470_1.jpg" alt="Idukki Landscape">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Destinations</h2>
+                <p>Discover Idukki's most stunning attractions</p>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="adventure">Adventure</button>
+                <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+            </div>
+            <div class="destinations-grid" id="destinationsContainer">
+                <!-- Destination cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Capturing the essence of Idukki</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/ba/ba/17/baba174ce450ab066d19a1b277f5da22.jpg" alt="Munnar Tea Gardens">
+                    <div class="caption">Munnar Tea Gardens</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/71/4e/0e/714e0ee8d5f4cc0d4db186030bfbe04a.jpg" alt="Eravikulam National Park">
+                    <div class="caption">Eravikulam National Park</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/f4/07/b3/f407b3d80648f827cf05a5b5c11a1c65.jpg" alt="Thommankuthu Waterfalls">
+                    <div class="caption">Thommankuthu Waterfalls</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/d8/e2/61/d8e261460def56ec3dd5f25a9447487a.jpg" alt="Idukki Arch Dam">
+                    <div class="caption">Idukki Arch Dam</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.explorebees.com/uploads/anamudi%20(11).jpg" alt="Anamudi Peak">
+                    <div class="caption">Anamudi Peak</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/4a/82/30/4a82300220c40bbf882d5be0bf42d8cf.jpg" alt="Periyar National Park">
+                    <div class="caption">Periyar National Park</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+                <p>What visitors say about Idukki</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">Idukki took my breath away! The mist-covered mountains, endless tea plantations, and the majestic Idukki Arch Dam created memories that will last a lifetime. The hospitality of the people and the delicious local cuisine made our trip even more special.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Adventure Traveler, USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">As a wildlife enthusiast, Idukki exceeded all my expectations. Eravikulam National Park was a highlight where we spotted the endangered Nilgiri Tahr. The biodiversity here is incredible, and the conservation efforts are truly commendable.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Wildlife Photographer, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">Our family vacation in Idukki was magical. The cool climate was a welcome relief, and our children loved the boat ride in Idukki Wildlife Sanctuary. The spice plantation tour was both educational and fascinating. We'll definitely be back!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Meera Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Meera Patel</h4>
+                            <p>Family Traveler, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="nav-dot active"></button>
+                    <button class="nav-dot"></button>
+                    <button class="nav-dot"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IdukkiExplorer</h3>
+                    <p>Your ultimate guide to exploring the majestic high ranges of Kerala. Discover breathtaking landscapes, rich biodiversity, and unforgettable experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Idukki</a></li>
+                        <li><a href="#destinations"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Idukki Arch Dam</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Munnar</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Eravikulam National Park</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Anamudi Peak</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Thekkady</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> District Tourism Office, Idukki, Kerala 685603</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@idukkexplorer.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    <a href="#" class="btn" style="margin-top: 15px;">Get Travel Guide</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 IdukkiExplorer. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Kerala Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Destination Data with Google Maps links
+        const destinations = [
+            {
+                id: 0,
+                name: "Idukki Arch Dam",
+                image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/17/28/ed/iduukki-arch-dam.jpg?w=700&h=400&s=1",
+                shortDesc: "Asia's largest arch dam and an engineering marvel.",
+                longDesc: "The Idukki Arch Dam stands between the two mountains - Kuravanmala and Kurathimala. It is the first arch dam in India and the second in Asia. The dam, which is one of the highest in the world, offers a magnificent view. The surrounding area is rich in flora and fauna and the reservoir formed by the dam is known as Idukki Lake. Boating is available here and it's a great place for photography enthusiasts.",
+                category: "nature",
+                altitude: "750m above sea level",
+                climate: "Cool and Pleasant",
+                activities: "Sightseeing, Boating, Photography",
+                bestTime: "September to May",
+                mapLink: "https://www.google.com/maps?q=Idukki+Arch+Dam"
+            },
+            {
+                id: 1,
+                name: "Munnar",
+                image: "https://i.pinimg.com/736x/70/05/c3/7005c3070dbddb763056d23a0da1449e.jpg",
+                shortDesc: "Famous hill station with sprawling tea plantations.",
+                longDesc: "Munnar is a breathtakingly beautiful hill station located in the Western Ghats mountain range. Famous for its endless tea plantations, misty hills, and cool climate, Munnar was once the summer resort of the British government in South India. The town offers spectacular views of rolling hills covered in a carpet of green tea bushes. Key attractions include the Tea Museum, Mattupetty Dam, Echo Point, and the Eravikulam National Park which is home to the endangered Nilgiri Tahr.",
+                category: "nature",
+                altitude: "1,600m above sea level",
+                climate: "Cool and Misty",
+                activities: "Tea Estate Tours, Trekking, Wildlife Spotting",
+                bestTime: "September to May",
+                mapLink: "https://www.google.com/maps?q=Munnar"
+            },
+            {
+                id: 2,
+                name: "Eravikulam National Park",
+                image: "https://i.pinimg.com/736x/74/43/0a/74430a6ef5466aaa4ebeb51964eb5890.jpg",
+                shortDesc: "Home to the endangered Nilgiri Tahr.",
+                longDesc: "Eravikulam National Park is a protected area located along the Western Ghats in the Idukki district. The park is famous for being the natural habitat of the endangered Nilgiri Tahr, a mountain goat species. Spread over 97 sq km, the park offers breathtaking views of rolling grasslands and shola forests. The highest peak south of the Himalayas, Anamudi (2695m), is located within this park. Visitors can enjoy guided tours, trekking, and wildlife spotting opportunities.",
+                category: "wildlife",
+                altitude: "2,000m above sea level",
+                climate: "Cool and Windy",
+                activities: "Wildlife Safari, Trekking, Photography",
+                bestTime: "September to November & April to June",
+                mapLink: "https://www.google.com/maps?q=Eravikulam+National+Park"
+            },
+            {
+                id: 3,
+                name: "Anamudi Peak",
+                image: "https://images.unsplash.com/photo-1602006018380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "South India's highest peak at 2,695 meters.",
+                longDesc: "Anamudi Peak, standing tall at 2,695 meters, is the highest peak in South India. Located within the Eravikulam National Park, the name 'Anamudi' translates to 'Elephant's Forehead' in Malayalam. The peak offers challenging trekking opportunities for adventure enthusiasts and rewards them with panoramic views of the Western Ghats. The region around Anamudi is rich in biodiversity with several endemic species of flora and fauna. Trekkers need special permission from forest authorities to climb this peak.",
+                category: "adventure",
+                altitude: "2,695m above sea level",
+                climate: "Cold at summit",
+                activities: "Trekking, Nature Walks, Photography",
+                bestTime: "December to April",
+                mapLink: "https://www.google.com/maps?q=Anamudi+Peak"
+            },
+            {
+                id: 4,
+                name: "Periyar National Park",
+                image: "https://i.pinimg.com/736x/94/33/33/943333a6b3085cfa1b9552feb0915786.jpg",
+                shortDesc: "Famous tiger reserve with a beautiful artificial lake.",
+                longDesc: "Periyar National Park and Wildlife Sanctuary is a protected area near Thekkady in Idukki district. The park is famous for its artificial lake formed by the Mullaperiyar Dam, which offers boat rides for wildlife viewing. Spread over 925 sq km, it's home to tigers, elephants, gaurs, sambar deer, and a variety of birds. The park is particularly known for its elephant herds that can often be seen near the lake. Visitors can enjoy bamboo rafting, jungle patrol, and nature walks along with regular boat safaris.",
+                category: "wildlife",
+                altitude: "900-1,800m above sea level",
+                climate: "Tropical",
+                activities: "Boat Safari, Bamboo Rafting, Jungle Trekking",
+                bestTime: "October to June",
+                mapLink: "https://www.google.com/maps?q=Periyar+National+Park"
+            },
+            {
+                id: 5,
+                name: "Mattupetty Dam",
+                image: "https://dreamlandmunnar.in/wp-content/uploads/2024/02/eZkZhdwABk_1600-ezgif.com-jpg-to-webp-converter-1024x756.webp",
+                shortDesc: "Beautiful reservoir surrounded by tea plantations.",
+                longDesc: "Mattupetty Dam is a concrete gravity dam located near Munnar. The dam and reservoir are surrounded by lush green tea plantations and rolling hills, creating a picturesque landscape. The reservoir is known for its still waters that perfectly reflect the surrounding hills. Visitors can enjoy boating in the reservoir and visit the nearby dairy farm which is one of the largest in Kerala. The area is also excellent for picnics and nature walks.",
+                category: "nature",
+                altitude: "1,700m above sea level",
+                climate: "Cool and Pleasant",
+                activities: "Boating, Picnicking, Photography",
+                bestTime: "November to May",
+                mapLink: "https://www.google.com/maps?q=Mattupetty+Dam"
+            },
+            {
+                id: 6,
+                name: "Thommankuthu Waterfalls",
+                image: "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Seven-step waterfall with natural pools.",
+                longDesc: "Thommankuthu Waterfalls is a spectacular seven-step waterfall located about 17km from Thodupuzha. The waterfall cascades down from a height of about 1500 meters through seven different stages, creating natural pools at each level. Surrounded by dense forests, the area offers excellent trekking opportunities. The waterfall is named after a tribal leader, Thomman, who is believed to have sacrificed his life here. The pools at different levels are safe for swimming and provide a refreshing experience.",
+                category: "nature",
+                altitude: "800m above sea level",
+                climate: "Tropical",
+                activities: "Trekking, Swimming, Nature Walks",
+                bestTime: "June to September",
+                mapLink: "https://www.google.com/maps?q=Thommankuthu+Waterfalls"
+            },
+            {
+                id: 7,
+                name: "Ramakkalmedu",
+                image: "https://images.unsplash.com/photo-1602005929697-6a2b6a5c5b33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Windy hilltop with panoramic views of Tamil Nadu.",
+                longDesc: "Ramakkalmedu, meaning 'Land of Rama's Stone', is a hill station and hamlet located in Idukki district. Situated about 16km from Nedumkandam, it offers panoramic views of the Tamil Nadu plains on one side and the Western Ghats on the other. The area is famous for its constant breeze and the huge statue of Kuravan and Kurathi that stands as a symbol of cross-border friendship between Kerala and Tamil Nadu. The rolling hills covered in green grass offer spectacular views, especially at sunset.",
+                category: "nature",
+                altitude: "981m above sea level",
+                climate: "Windy and Pleasant",
+                activities: "Sightseeing, Photography, Nature Walks",
+                bestTime: "October to March",
+                mapLink: "https://www.google.com/maps?q=Ramakkalmedu"
+            },
+            {
+                id: 8,
+                name: "Kalvari Mount",
+                image: "https://images.unsplash.com/photo-1602006008380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Christian pilgrimage site with panoramic views.",
+                longDesc: "Kalvari Mount, also known as Kalliyanathandu, is a Christian pilgrimage center located near Idukki town. The site features a church at the summit and 14 stations of the cross depicting the passion of Christ. The climb to the top offers breathtaking views of the Idukki reservoir and the surrounding hills. The annual festival during Lent attracts thousands of devotees. Even for non-religious visitors, the viewpoint at the top offers one of the best panoramic views of the Idukki region.",
+                category: "cultural",
+                altitude: "1,200m above sea level",
+                climate: "Cool and Pleasant",
+                activities: "Pilgrimage, Trekking, Sightseeing",
+                bestTime: "October to May",
+                mapLink: "https://www.google.com/maps?q=Kalvari+Mount"
+            },
+            {
+                id: 9,
+                name: "Chinnar Wildlife Sanctuary",
+                image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Diverse ecosystem with unique dry thorny forests.",
+                longDesc: "Chinnar Wildlife Sanctuary is located in the rain shadow region of the Western Ghats, making it unique with its dry thorny forests. Spread over 90 sq km, the sanctuary is home to several endangered species including the grizzled giant squirrel, star tortoise, and the tufted grey langur. The sanctuary is also rich in reptilian fauna and is an important center for eco-tourism. Visitors can enjoy guided treks, wildlife spotting, and visits to the Thoovanam waterfalls inside the sanctuary.",
+                category: "wildlife",
+                altitude: "400-2,000m above sea level",
+                climate: "Dry and Hot",
+                activities: "Wildlife Safari, Trekking, Waterfall Visit",
+                bestTime: "December to April",
+                mapLink: "https://www.google.com/maps?q=Chinnar+Wildlife+Sanctuary"
+            },
+            {
+                id: 10,
+                name: "Marayoor",
+                image: "https://images.unsplash.com/photo-1602006008380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Famous for natural sandalwood forests and dolmens.",
+                longDesc: "Marayoor is the only place in Kerala with natural sandalwood forests. Located about 42km from Munnar, the region is also famous for its prehistoric dolmens (muniyaras) and cave paintings that date back to the Stone Age. The area has a unique microclimate suitable for growing sugarcane, and visitors can see traditional jaggery production. The sandalwood factories and the protected forests make Marayoor an interesting destination for nature and history enthusiasts.",
+                category: "cultural",
+                altitude: "1,000m above sea level",
+                climate: "Tropical",
+                activities: "Sandalwood Forest Tour, Dolmen Exploration, Jaggery Making",
+                bestTime: "September to May",
+                mapLink: "https://www.google.com/maps?q=Marayoor"
+            },
+            {
+                id: 11,
+                name: "Painavu",
+                image: "https://images.unsplash.com/photo-1593692909680-1f0ea0c6b0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Headquarters of Idukki district surrounded by forests.",
+                longDesc: "Painavu is the administrative headquarters of Idukki district, nestled in the hills and surrounded by dense forests. The town offers panoramic views of the surrounding hills and valleys. Key attractions include the Idukki Wildlife Sanctuary, the district administrative complex, and the nearby viewpoints that offer spectacular sunrise and sunset views. Painavu serves as a base for exploring nearby attractions like the Idukki Arch Dam and Cheruthoni Dam.",
+                category: "nature",
+                altitude: "1,200m above sea level",
+                climate: "Cool and Pleasant",
+                activities: "Sightseeing, Nature Walks, Photography",
+                bestTime: "Year-round",
+                mapLink: "https://www.google.com/maps?q=Painavu"
+            },
+            {
+                id: 12,
+                name: "Thekkady",
+                image: "https://images.unsplash.com/photo-1593692909680-1f0ea0c6b0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Gateway to Periyar National Park and wildlife adventures.",
+                longDesc: "Thekkady is a picturesque town located near the Periyar National Park, known for its rich biodiversity and spice plantations. It serves as the gateway to the Periyar Wildlife Sanctuary, where visitors can enjoy boat rides on the Periyar Lake to spot elephants, tigers, and various bird species. The town is surrounded by hills and spice gardens, offering opportunities for spice tours, trekking, and cultural performances.",
+                category: "wildlife",
+                altitude: "900-1,800m above sea level",
+                climate: "Tropical",
+                activities: "Boat Safari, Spice Tours, Cultural Shows",
+                bestTime: "October to June",
+                mapLink: "https://www.google.com/maps?q=Thekkady"
+            },
+            {
+                id: 13,
+                name: "Vagamon",
+                image: "https://images.unsplash.com/photo-1602006008380-4e32a6995393?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Picturesque hill station with meadows and pine forests.",
+                longDesc: "Vagamon is a beautiful hill station situated at the border of Idukki and Kottayam districts. Known for its cool climate, green meadows, pine forests, and tea plantations, Vagamon offers a peaceful retreat away from city life. The area features several viewpoints including Suicide Point, Thangal Para (a Muslim pilgrimage center), and Kurisumala (a Christian pilgrimage center). Adventure activities like paragliding, trekking, and rock climbing are popular here.",
+                category: "adventure",
+                altitude: "1,100m above sea level",
+                climate: "Cool and Misty",
+                activities: "Paragliding, Trekking, Rock Climbing",
+                bestTime: "Year-round",
+                mapLink: "https://www.google.com/maps?q=Vagamon"
+            },
+            {
+                id: 14,
+                name: "Mangala Devi Temple",
+                image: "https://images.unsplash.com/photo-1593692909680-1f0ea0c6b0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                shortDesc: "Ancient temple on the Kerala-Tamil Nadu border.",
+                longDesc: "Mangala Devi Temple is an ancient stone temple located at the border of Kerala and Tamil Nadu, deep inside the Periyar Tiger Reserve. Dedicated to Goddess Kannaki (Mangala Devi), the temple is believed to be over 2000 years old. The temple is open to the public only during the Chitra Pournami festival in April/May. The journey to the temple through dense forests is an adventure in itself, offering opportunities to spot wildlife.",
+                category: "cultural",
+                altitude: "1,300m above sea level",
+                climate: "Tropical",
+                activities: "Pilgrimage, Trekking, Wildlife Spotting",
+                bestTime: "April-May during festival",
+                mapLink: "https://www.google.com/maps?q=Mangala+Devi+Temple"
+            }
+        ];
+
+        // DOM Elements
+        const destinationsContainer = document.getElementById('destinationsContainer');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate destination cards
+            generateDestinationCards(destinations);
+            
+            // Add event listeners
+            addEventListeners();
+            
+            // Initialize testimonial slider
+            initTestimonialSlider();
+        });
+
+        // Generate destination cards
+        function generateDestinationCards(destinationsArray) {
+            destinationsContainer.innerHTML = '';
+            
+            destinationsArray.forEach(destination => {
+                const card = document.createElement('div');
+                card.className = `destination-card ${destination.category}`;
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="${destination.image}" alt="${destination.name}">
+                    </div>
+                    <div class="card-content">
+                        <h3>${destination.name}</h3>
+                        <p>${destination.shortDesc}</p>
+                        <a href="${destination.mapLink}" target="_blank" class="map-link">
+                            <i class="fas fa-map-marker-alt"></i> View on Map
+                        </a>
+                        <button class="btn view-details" data-id="${destination.id}">View Details</button>
+                    </div>
+                    <div class="card-badge">${destination.category.charAt(0).toUpperCase() + destination.category.slice(1)}</div>
+                `;
+                destinationsContainer.appendChild(card);
+            });
+            
+            // Add event listeners to detail buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    showDestinationDetails(id);
+                });
+            });
+        }
+
+        // Show destination details
+        function showDestinationDetails(id) {
+            const destination = destinations.find(dest => dest.id === parseInt(id));
+            
+            if (destination) {
+                // Create modal-like overlay
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                overlay.style.zIndex = '2000';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                overlay.style.padding = '20px';
+                overlay.style.overflowY = 'auto';
+                
+                // Create modal content
+                const modalContent = document.createElement('div');
+                modalContent.style.background = 'white';
+                modalContent.style.maxWidth = '900px';
+                modalContent.style.width = '100%';
+                modalContent.style.borderRadius = '15px';
+                modalContent.style.overflow = 'hidden';
+                modalContent.style.position = 'relative';
+                modalContent.style.animation = 'modalOpen 0.5s ease';
+                
+                modalContent.innerHTML = `
+                    <div style="background: var(--primary); padding: 25px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 1.8rem; font-family: 'Playfair Display', serif;">${destination.name}</h3>
+                        <button class="close-modal" style="background: none; border: none; color: white; font-size: 2rem; cursor: pointer; transition: all 0.3s ease;">&times;</button>
+                    </div>
+                    <div style="padding: 30px; display: flex; gap: 30px; flex-wrap: wrap;">
+                    <div class="destination-modal-image" style="flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                          <img src="${destination.image}" alt="${destination.name}" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">${destination.longDesc}</p>
+                            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-mountain" style="color: var(--primary);"></i>
+                                    <span>Altitude: ${destination.altitude}</span>
+                                </div>
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-sun" style="color: var(--primary);"></i>
+                                    <span>Climate: ${destination.climate}</span>
+                                </div>
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-hiking" style="color: var(--primary);"></i>
+                                    <span>Activities: ${destination.activities}</span>
+                                </div>
+                                <div style="background: var(--light); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-calendar-alt" style="color: var(--primary);"></i>
+                                    <span>Best Time: ${destination.bestTime}</span>
+                                </div>
+                            </div>
+                            <a href="${destination.mapLink}" target="_blank" class="btn" style="margin-top: 10px;">
+                                <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                overlay.appendChild(modalContent);
+                document.body.appendChild(overlay);
+                
+                // Close modal
+                const closeBtn = modalContent.querySelector('.close-modal');
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(overlay);
+                });
+                
+                // Close when clicking outside
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) {
+                        document.body.removeChild(overlay);
+                    }
+                });
+            }
+        }
+
+        // Add event listeners
+        function addEventListeners() {
+            // Filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    if (filter === 'all') {
+                        generateDestinationCards(destinations);
+                    } else {
+                        const filtered = destinations.filter(dest => dest.category === filter);
+                        generateDestinationCards(filtered);
+                    }
+                });
+            });
+            
+            // Menu toggle for mobile
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+        }
+
+        // Initialize testimonial slider
+        function initTestimonialSlider() {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            let currentSlide = 0;
+            
+            // Function to show a specific slide
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
